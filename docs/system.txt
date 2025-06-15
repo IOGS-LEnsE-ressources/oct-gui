@@ -1,0 +1,10 @@
+OCT System - Room N1.5
+
+## Piezo Controller
+    -> KPZ101 - SN : 29501399
+
+## Step motor controller
+    -> BSC 201 - Controller - SN : 40897338
+    -> DRV 208 - Step Motor
+
+TEST

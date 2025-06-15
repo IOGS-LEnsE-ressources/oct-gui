@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+### Configuration file of OCT Lab App
+Language;FR
+### Camera Basler
+ColorMode;Mono12
+ExposureTime;1500
+MaxExpoTime;20000
+### Step Motor
+StepSN;40897338
+StepperInitPosition;3.5
+StepperInitStep;200
+### Piezo
+PiezoSN;29501399
+PiezoV0;10
+PiezoDV;3
+### Default directory
+DirImages;D:/_old_dd/

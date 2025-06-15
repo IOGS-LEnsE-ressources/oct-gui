@@ -1,0 +1,35 @@
+
+
+PHASE INIT
+----------
++ Lancer caméra
++ Positionner pas à pas à 4 ou 5mm
+
+
+POST CALCULS
+------------
++ Voir pour inclure post-traitement d'images dans Python (et non ImageJ)
+
+
+INSTALLATION
+------------
++ Ecrire une procédure d'installation propre en français (pour Thierry, Cédric et Julien M.)
+	-> 	Installation de Thorlabs Kinesis
+	->	Installation de Basler Pylon viewer
+	-> 	Installation de Python 3.11 (ou plus)
+	-> 	Fichier requirements.txt à mettre à jour en fonction des librairies
++ Tester procédure d'installation sur configuration propre (sans LabView)
+
+
+INFOS SYSTEMES
+--------------
+
+Moteur Pas à pas
+~~~~~~~~~~~~~~~~
+    ++ Intervalle : 2mm - 7mm
+            +> Se placer à 4 ou 5mm au départ de l'appli.
+
+
+BUGS !!!
+{#########
+-> Revoir ImageDisplayGraph lorsqu'on renvoit une seconde image à afficher (typiquement dans thread de rafraichissement)

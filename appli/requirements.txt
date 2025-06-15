@@ -1,0 +1,14 @@
+## Basler Camera
+# pylon Viewer software must be installed (including Basler cameras drivers).
+# pypylon API is required.
+
+## Python requirements
+lensepy
+lensecam
+numpy
+matplotlib
+pyqt6
+pypylon
+pylablib
+pythonnet
+opencv-python
