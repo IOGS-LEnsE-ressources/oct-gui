@@ -20,11 +20,11 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        pip install -r docsweb/requirements_docs.txt
+        pip install -r docs/requirements_docs.txt
 
     - name: Build Docs
       run: |
-        cd docsweb/
+        cd docs/
         make html
 
     - name: Deploy to GitHub Pages
