@@ -6,6 +6,15 @@
 
 ## Main contributors
 
+This Python/PyQt6 release of the GUI was developed by **Noam CHOPPINET** (Student at Institut d’Optique from 2024 to 2027) during an internship in July 2025.
+
+This release was made under the supervision of **Julien MOREAU** (Professor at Institut d’Optique) and **Julien VILLEMEJANE** (Teacher at Institut d’Optique).
+
+*This GUI is based on an obsolete LabView version, developed by Julien MOREAU (and students).*
+
+Technical support was regularly provided by Thierry AVIGNON (Lead Technical and Operations Engineer at LEnsE / Institut d’Optique).
+
+
 
 
 ## Context

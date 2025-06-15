@@ -20,3 +20,17 @@ at the Experimental Teaching Laboratory (LEnsE) of the Institut d'Optique Gradua
 
 The GitHub repository of this project : `OCT GUI <https://github.com/IOGS-LEnsE-ressources/oct-gui>`_
 
+
+Labworks subject are available at the following addresses `Biophotonics Labs <https://lense.institutoptique.fr/ressources/Annee3/TP_Photonique/S9-2324-BioPhot.pdf>`_.
+
+
+Main contributors
+*****************
+
+This Python/PyQt6 release of the GUI was developed by **Noam CHOPPINET** (Student at Institut d’Optique from 2024 to 2027) during an internship in July 2025.
+
+This release was made under the supervision of **Julien MOREAU** (Professor at Institut d’Optique) and **Julien VILLEMEJANE** (Teacher at Institut d’Optique).
+
+*This GUI is based on an obsolete LabView version, developed by Julien MOREAU (and students).*
+
+Technical support was regularly provided by Thierry AVIGNON (Lead Technical and Operations Engineer at LEnsE / Institut d’Optique).
