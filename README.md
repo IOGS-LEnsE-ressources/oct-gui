@@ -25,6 +25,12 @@ One of the main medical applications of OCT is corneal imaging, using devices co
 
 ## Experimental Setup
 
+## Main Algorithm of the application
+
+
+
+![Main algorithm](docs/source/_static/images/oct_main_algo.png)
+
 
 
 ## How to use this repository
