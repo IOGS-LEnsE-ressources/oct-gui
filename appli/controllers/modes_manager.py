@@ -43,6 +43,8 @@ class ModesController:
         camera_widget.camera_exposure_changed.connect(self.handle_camera_exposure)
         motor_widget = self.main_app.central_widget.motors_options
         motor_widget.motor_changed.connect(self.handle_stepper_move)
+        image_widget = self.main_app.central_widget.image_params
+        image_widget.image_changed.connect(self.handle_image_display)
         acq_widget = self.main_app.central_widget.acquisition_options
         acq_widget.filename_changed.connect(self.handle_folder)
         acq_widget.acqThread.connect(self.handle_acquisition)
@@ -157,12 +159,34 @@ class ModesController:
 
             image_view.image1_widget.set_image_from_array(self.main_app.image1, 'Image 1')
             image_view.image2_widget.set_image_from_array(self.main_app.image2, 'Image 2')
-            image_view.image_oct_graph.set_image_from_array(self.convertTo_uint8(self.main_app.image_oct), 'OCT')
+            image_oct = self.convertTo_uint8(self.main_app.image_oct)
+            if self.main_app.image_log_display:
+                image_oct_disp = np.log(image_oct+0.01)
+                image_view.image_oct_graph.set_image_from_array(image_oct_disp, 'OCT - LOG')
+            else:
+                coeff = self.main_app.image_intensity_factor
+                image_oct_disp = coeff * image_oct
+                image_view.image_oct_graph.set_image_from_array(image_oct_disp, f'OCT - x {coeff}')
+
         else:
             black = np.random.normal(size=(100, 100))
             image_view.image1_widget.set_image_from_array(black, "No Piezo or camera")
             image_view.image2_widget.set_image_from_array(black, "No Piezo or camera")
             image_view.image_oct_graph.set_image_from_array(black, "No Piezo or camera")
+
+    def handle_image_display(self, event):
+        """Action performed when display image parameters changed."""
+        source_event = event.split("=")
+        source = source_event[0]
+        message = source_event[1]
+        if source == 'IntFactor':
+            self.main_app.image_intensity_factor = int(message)
+        elif source == "Log":
+            if message == '1':
+                self.main_app.image_log_display = True
+            else:
+                self.main_app.image_log_display = False
+
 
     def handle_camera_exposure(self, event):
         """Action performed when camera exposure time slider changed."""

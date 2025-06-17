@@ -98,6 +98,9 @@ class MainWindow(QMainWindow):
 
         self.image_bits_depth = 12
 
+        self.image_intensity_factor = 1
+        self.image_log_display = False
+
         # Main variables
         if 'PiezoDV' in self.default_parameters:
             self.piezo_step_size = float(self.default_parameters['PiezoDV'])

@@ -22,6 +22,7 @@ from views.title_view import TitleView
 from views.acquisition import AcquisitionView
 from views.motors_display import MotorControlView
 from views.camera_params import CameraParamsView
+from views.image_control import ImageControlView
 #from views.live_mode import *
 
 
@@ -102,6 +103,9 @@ class MainView(QWidget):
         self.motors_options.setMaximumWidth(MAX_LEFT_WIDTH)
         self.left_layout.addWidget(self.motors_options)
         self.left_layout.addStretch()
+        self.image_params = ImageControlView(self.parent)
+        self.image_params.setMaximumWidth(MAX_LEFT_WIDTH)
+        self.left_layout.addWidget(self.image_params)
         self.acquisition_options = AcquisitionView(self.parent)
         self.acquisition_options.setMaximumWidth(MAX_LEFT_WIDTH)
         self.left_layout.addWidget(self.acquisition_options)

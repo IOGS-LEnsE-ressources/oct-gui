@@ -211,7 +211,7 @@ else:
         Class for controlling Thorlabs BSC20x step motor, through a DRV208 controller.
         """
 
-        def __init__(self, serial_no="40897338"):
+        def __init__(self, parent, serial_no="40897338"):
             self.serial_no = serial_no
             self.position = 3
 
