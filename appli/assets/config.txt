@@ -4,21 +4,23 @@ Language;FR
 ### Camera Basler
 ColorMode;Mono12
 ExposureTime;1500
-MaxExpoTime;20000
+MaxExpoTime;2000
 MinExpoTime;50
 NumberAvgdImages;1
 ### Step Motor
 StepSN;40897338
 StepperInitPosition;3.2
-StepperInitStep;200
+StepperInitStep;100
 ### Piezo
 PiezoSN;29501399
 PiezoV0;10
 PiezoDV;0.75
 ### Default directory
-DirImages;C:\Users\Noam\Documents\GitHub\camera-gui\applis\OCTv3\img
+DirImages;C:\Users\LEnsE\Desktop\Images OCT
 ### Motor limits
 MotorMaxPos;5
 ### Acquisition initial parameters
 AcquisitionStepSize;0.5
 AcquisitionStepNumber;20
+### Image Display
+FactorList;1,2,4,8,16,32

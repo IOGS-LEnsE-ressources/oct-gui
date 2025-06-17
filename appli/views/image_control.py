@@ -18,7 +18,7 @@ class ImageControlView(QWidget):
         self.parent = parent
         self.setWindowTitle("Paramètres image OCT")
 
-        self.pixel_intensity_list = ['1', '2', '4', '8', '16']
+        self.pixel_intensity_list = self.parent.factor_list
 
         layout = QVBoxLayout()
 

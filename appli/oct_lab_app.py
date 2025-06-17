@@ -21,13 +21,35 @@ from lensepy import load_dictionary, translate, dictionary
 from PyQt6.QtWidgets import (
     QWidget, QPushButton,
     QMainWindow, QApplication, QMessageBox)
+from PyQt6.QtGui import QPalette, QColor
+from PyQt6.QtCore import Qt
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    light_palette = QPalette()
+    light_palette.setColor(QPalette.ColorRole.Window, QColor(240, 240, 240))
+    light_palette.setColor(QPalette.ColorRole.WindowText, Qt.GlobalColor.black)
+    light_palette.setColor(QPalette.ColorRole.Base, Qt.GlobalColor.white)
+    light_palette.setColor(QPalette.ColorRole.AlternateBase, QColor(225, 225, 225))
+    light_palette.setColor(QPalette.ColorRole.ToolTipBase, Qt.GlobalColor.black)
+    light_palette.setColor(QPalette.ColorRole.ToolTipText, Qt.GlobalColor.white)
+    light_palette.setColor(QPalette.ColorRole.Text, Qt.GlobalColor.black)
+    light_palette.setColor(QPalette.ColorRole.Button, QColor(240, 240, 240))
+    light_palette.setColor(QPalette.ColorRole.ButtonText, Qt.GlobalColor.black)
+    light_palette.setColor(QPalette.ColorRole.BrightText, Qt.GlobalColor.red)
+    light_palette.setColor(QPalette.ColorRole.Highlight, QColor(0, 120, 215))
+    light_palette.setColor(QPalette.ColorRole.HighlightedText, Qt.GlobalColor.white)
+
+    app.setPalette(light_palette)
+    
+    
+    
 ## Widgets
 from lensepy.pyqt6 import *
 from lensepy.pyqt6.widget_image_display import ImageDisplayWidget
-from views.main_view import MainView
 from lensecam.basler.camera_basler import CameraBasler, get_bits_per_pixel
 from models.motor_control import *
+from views.main_view import MainView
 from controllers.modes_manager import ModesController
 
 def load_default_dictionary(language: str) -> bool:
@@ -124,6 +146,10 @@ class MainWindow(QMainWindow):
             self.init_acq_step_size = self.default_parameters['AcquisitionStepSize']
         if 'AcquisitionStepNumber' in self.default_parameters:
             self.init_acq_step_num = self.default_parameters['AcquisitionStepNumber']
+        if 'FactorList' in self.default_parameters:
+            self.factor_list = self.default_parameters['FactorList'].split(',')
+        else:
+            self.factor_list = ['1', '2', '4', '8', '16', '32']    
 
         ### Buttons style sheet
         self.style_but_enabled = """QPushButton {
@@ -268,8 +294,6 @@ class MainWindow(QMainWindow):
             event.ignore()
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
     window = MainWindow()
     window.showMaximized()
     sys.exit(app.exec())
